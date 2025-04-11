@@ -2,10 +2,15 @@
 
 // Versão recursiva
 int maximo_recursivo(int *v, int n) {
-    if (n == 1)
+    if (n == 1) {
         return v[0];
+    }
     int m = maximo_recursivo(v, n - 1);
-    return v[n - 1] > m ? v[n - 1] : m;
+    if (v[n - 1] > m) {
+        return v[n - 1];
+    } else {
+        return m;
+    }
 }
 
 // Versão iterativa
